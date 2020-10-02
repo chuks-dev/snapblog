@@ -1,5 +1,6 @@
 .carousel-img {
   max-height: calc(100vh - 55.95px);
+  height: calc(100vh - 55.95px);
   object-fit: cover;
   object-position: center;
 }

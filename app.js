@@ -1,6 +1,7 @@
 const { urlencoded } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
+const keys = require('./config/keys');
 
 const app = express();
 
@@ -13,12 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 // Use Pubic directory
 app.use(express.static("public"));
 
-const localDB = "mongodb://localhost:27017/snapblog";
-const remoteDB =
-  "mongodb+srv://chuksdev:kofqT01tRabMITJ0@cluster0.ated6.mongodb.net/snapblog?retryWrites=true&w=majority";
 
 //Connect mongoose to mongodb
-mongoose.connect(remoteDB, {
+mongoose.connect(keys.remoteDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
