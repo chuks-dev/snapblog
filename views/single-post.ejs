@@ -1,0 +1,40 @@
+<%- include ('./partials/header') %>
+
+<header>
+  <div class="container-fluid mt-3">
+    <img
+    src=<%=post.imgUrl%> 
+    alt=<%=post.title%>
+    class="single-post-img" />
+  </div>
+</header>
+<main class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="post-content col-md-8">
+        <h1 class="display-3"><%=post.title %></h1>
+        <div class="post-texts"><%=post.content %></div>
+      </div>
+
+      <aside class="col-md-4">
+       <% if( Object.keys(readNext).length !== 0 ){ %>
+          <h3 class="">Read Next</h3>
+          <div class="card mx-auto">
+          <img src=<%=readNext.imgUrl%>  class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title"><%=readNext.title%> </h5>
+            <p class="card-text">
+              <%=readNext.content.substring(0,100)%>... 
+            </p>
+            <a href=/post/<%=readNext._id %>  class="btn btn-primary">Read more</a>
+          </div>
+        </div>
+        
+       <% } %>
+        
+      </aside>
+    </div>
+  </div>
+</main>
+
+<%- include ('./partials/footer') %>

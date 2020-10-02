@@ -1,0 +1,15 @@
+.carousel-img {
+  max-height: calc(100vh - 55.95px);
+  object-fit: cover;
+  object-position: center;
+}
+.single-post-img {
+  height: calc(60vh - 55.95px);
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-img-top {
+  max-height: 250px;
+  object-fit: cover;
+}

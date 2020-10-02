@@ -1,0 +1,57 @@
+<%-include ('./partials/header') %>
+
+<h2 class="display-2 text-center">Create a new post</h2>
+
+<main>
+  <form
+    action="/create-post"
+    method="POST"
+    class="my-5 mx-auto"
+    style="width: 60%"
+  >
+    <div class="mb-3">
+      <label for="title" class="form-label">Give your post a title</label>
+      <input
+        name="title"
+        type="text"
+        class="form-control"
+        id="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input
+        name="imgUrl"
+        type="text"
+        class="form-control"
+        id="image"
+        placeholder="Paste image url"
+      />
+    </div>
+
+    <div>
+      <label for="content" class="form-label"> Post Content</label>
+      <textarea
+        name="content"
+        id=""
+        cols="30"
+        rows="10"
+        class="form-control"
+        placeholder="Start writing..."
+      > </textarea
+      >
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="featured"
+      name="featured" />
+      <label class="form-check-label" for="featured"
+        >is this post featured?</label
+      >
+    </div>
+    <button type="submit"  class="btn btn-primary" >
+      Create Post
+    </button>
+  </form>
+</main>
+<%-include ('./partials/footer') %>

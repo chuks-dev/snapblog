@@ -1,0 +1,36 @@
+<%-include ('./partials/header') %>
+<% const featuredPosts = posts.filter(post=>post.featured) %> 
+
+<main class="mt-5">
+  <div class="container">
+    <div class="row">
+      
+      <% posts.reverse().forEach((post)=>{ %>
+        <div class="col-md-4 mb-5">
+        <div class="card" >
+          <img src=<%=post.imgUrl  %>  class="card-img-top" alt=<%=post.title%> />
+          <div class="car d-body">
+            <h5 class="card-title"><%= post.title  %> </h5>
+            <p class="card-text">
+              
+              <%=post.content.substring(0,100)  %>...
+            </p>
+            <a href=/post/<%=post._id%>  class="btn btn-primary">Read more</a>
+            <a href=/edit/<%=post._id%>  class="btn btn-success">Edit</a>
+          </div>
+        </div>
+      </div>
+
+
+     <% }) %> 
+
+
+
+
+
+
+      
+  </div>
+</main>
+
+<%- include ('./partials/footer') %>
